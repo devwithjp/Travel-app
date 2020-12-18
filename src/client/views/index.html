@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Blerina Pllana">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel App</title>
+
+</head>
+<body>
+<div class="container">
+
+    <section class="searchpart">
+        <h1>Travel Agency</h1>
+            <label>Where you gonna Travel</label>
+            <input id="city" type="text" value="" name="city" placeholder="City/Country"><br/>
+            <label>Leaving Date</label>
+            <input id="leaving" type="date" value="" placeholder="date" name="date"><br/>
+            <label>Returning Date</label>
+             <input id="returning" type="date" value="" placeholder="date" name="date"><br/>
+            <button class="continue">Continue</button>
+    </section>
+
+
+    <section class="resultpart hide">
+            <div class="containerImg">
+                <img id="img" />
+            </div>
+        <div class="result">
+           <div class="titles">
+            <h3>Country:</h3>
+            <h3>City:</h3>
+            <h3>Weather:</h3>
+            <h3>Description:</h3>
+            <h3>Leaving Date:</h3>
+            <h3>Returning Date:</h3>
+        </div>
+        <div class="infos">
+            <p id="country"></p>
+            <p id="place"></p>
+            <p id="weather"></p>
+            <p id="description"></p>
+            <p id="leavingdate"></p>
+            <p id="returningdate"></p>
+        </div>
+        </div>
+        <button class="book">Book Now</button>
+    </section>
+</div>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+</body>
+
+</html>
